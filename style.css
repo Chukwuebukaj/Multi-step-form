@@ -246,15 +246,15 @@ button {
 
 .plan-grid {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 1.4rem;
 }
 
 .grid-item {
     padding: 1rem 0 0 1rem;
     border: 1px solid var(--color-neutral-cg);
     border-radius: .7rem;
-    width: 30%;
     height: 9.5rem;
 }
 
@@ -354,12 +354,19 @@ input:checked+.slider:before {
     color: var(--color-primary-mb)
 }
 
+.services {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 30% 30%;
+    grid-gap: .7rem;
+    height: 40vh;
+    margin-bottom: 1rem;
+}
+
 .service {
     border: 1px solid var(--color-neutral-cg);
     display: flex;
     align-items: center;
-    height: 5vw;
-    margin-bottom: 1rem;
     border-radius: .3rem;
     padding: 0 1rem;
     cursor: pointer;
@@ -520,18 +527,19 @@ input[type='checkbox'] {
     }
 
     .plan-grid {
-        flex-direction: column;
-        width: 100%;
-        height: 50%;
+        grid-template-columns: 100%;
+        grid-template-rows: 5rem 5rem 5rem;
+        grid-gap: 1rem;
+        /* width: 100%;
+        height: 50%; */
     }
 
     .grid-item {
         display: flex;
-        width: 100%;
-        height: 30%;
         flex-direction: row;
         align-items: center;
         padding-top: 0;
+        height: 5rem;
     }
 
     #description {
@@ -597,6 +605,7 @@ input[type='checkbox'] {
     }
 
     .nav-bar a {
+        width: -moz-fit-content;
         width: fit-content;
         font-size: 16px;
         margin-left: 10%;
