@@ -33,28 +33,28 @@
     <div class="form-container">
       <nav class="nav-bar">
         <a class="nav-item">
-          <div class="fig active" tabindex="1">1</div>
+          <div class="fig active">1</div>
           <div class="content">
             <p>STEP 1</p>
             <h5>YOUR INFO</h5>
           </div>
         </a>
         <a class="nav-item">
-          <div class="fig" tabindex="2">2</div>
+          <div class="fig">2</div>
           <div class="content">
             <p>STEP 2</p>
             <h5>SELECT PLAN</h5>
           </div>
         </a>
         <a class="nav-item">
-          <div class="fig" tabindex="3">3</div>
+          <div class="fig">3</div>
           <div class="content">
             <p>STEP 3</p>
             <h5>ADD-ONS</h5>
           </div>
         </a>
         <a class="nav-item">
-          <div class="fig" tabindex="4">4</div>
+          <div class="fig">4</div>
           <div class="content">
             <p>STEP 4</p>
             <h5>SUMMARY</h5>
@@ -66,65 +66,61 @@
 
         <section id="step-one">
           <form>
-            <label>
-              <h1 class="title">Personal Info</h1>
-            </label>
+            <h1 class="title"> Personal Info</h1>
             <p>Please provide your name, email address, and phone number</p>
             <div class="input-div">
               <label for="name">
-                <p>Name</p>
-                <p class="alert">This field is required</p>
+                <strong>Name</strong>
               </label>
+              <p class="alert">This field is required</p>
               <input type="text" name="name" id="name" placeholder="e.g. Stephen King">
             </div>
             <div class="input-div">
               <label for="email-address">
-                <p>Email Address</p>
-                <p class="alert">This field is required</p>
+                <strong> Email Address</strong>
               </label>
-              <input type="text" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
+              <p class="alert">This field is required</p>
+              <input type="text" name="email" id="email-address" placeholder="e.g. stephenking@lorem.com">
             </div>
             <div class="input-div">
               <label for="phone-number">
-                <p>Phone Number</p>
-                <p class="alert">This field is required</p>
+                <strong>Phone Number</strong>
               </label>
-              <input type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890">
+              <p class="alert">This field is required</p>
+              <input type="text" name="phone" id="phone-number" placeholder="e.g. +1 234 567 890">
             </div>
             <div class="btn btn-step-1">
               <button type="reset" id="clear-btn">Clear Form</button>
-              <a id="page-two">Next Step</a>
+              <a class="page-two">Next Step</a>
             </div>
           </form>
         </section>
 
         <section id="step-two">
           <form>
-            <label for="title">
               <h1 class="title">Select your plan</h1>
-            </label>
             <p>You have the option of monthly or yearly billing.</p>
             <div class="plan-grid">
               <div class="grid-item">
-                <div id="icon"><img src="./assets/images/icon-arcade.svg" alt=""></div>
-                <div id="description">
-                  <h4 id="arcade">Arcade&nbsp;</h4>
+                <div class="icon"><img src="./assets/images/icon-arcade.svg" alt=""></div>
+                <div class="description">
+                  <h4 id="arcade">Arcade</h4>
                   <p id="nine-dollars">$9/mo</p>
                   <p class="free">2 months free</p>
                 </div>
               </div>
               <div class="grid-item">
-                <div id="icon"><img src="./assets/images/icon-advanced.svg" alt=""></div>
-                <div id="description">
-                  <h4>Advanced&nbsp;</h4>
+                <div class="icon"><img src="./assets/images/icon-advanced.svg" alt=""></div>
+                <div class="description">
+                  <h4>Advanced</h4>
                   <p id="twelve-dollars">$12/mo</p>
                   <p class="free">2 months free</p>
                 </div>
               </div>
               <div class="grid-item">
-                <div id="icon"><img src="./assets/images/icon-pro.svg" alt=""></div>
-                <div id="description">
-                  <h4>Pro&nbsp;</h4>
+                <div class="icon"><img src="./assets/images/icon-pro.svg" alt=""></div>
+                <div class="description">
+                  <h4>Pro</h4>
                   <p id="fifteen-dollars">$15/mo</p>
                   <p class="free">2 months free</p>
                 </div>
@@ -146,10 +142,8 @@
         </section>
 
         <section id="step-three">
-          <form action="" id="step-three">
-            <label for="title">
-              <h1>Pick add-ons</h1>
-            </label>
+          <form id="step_three">
+              <h1 class="title">Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience</p>
             <div class="services">
               <label class="service online-service">
@@ -185,16 +179,14 @@
         </section>
 
         <section id="step-four">
-          <form action="" id="step-four">
-            <label for="title">
-              <h1>Finishing up</h1>
-            </label>
+          <form id="step_four">
+              <h1 class="title">Finishing up</h1>
             <p>Double-check everything looks OK before confirming.</p>
             <div class="selected-items">
               <div class="selected-plan">
                 <div class="plan">
                   <div class="desc">
-                    <h4 class='plan-type'></h4>
+                    <h4 class='plan-type'> </h4>
                   </div>
                   <a href="#step-two" id="change">Change</a>
                 </div>

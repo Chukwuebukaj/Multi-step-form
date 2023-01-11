@@ -11,7 +11,7 @@ const navItem = document.querySelectorAll(".nav-item"),
   monthly = document.getElementById("monthly"),
   yearly = document.getElementById("yearly"),
   free = document.querySelectorAll(".free"),
-  exitPageOneBtn = document.getElementById("page-two"),
+  exitPageOneBtn = document.querySelector(".page-two"),
   exitPageTwoBtn = document.getElementById("page-three"),
   exitPageThreeBtn = document.getElementById("page-four"),
   backToPageOne = document.getElementById("back-one"),
@@ -189,7 +189,7 @@ function changeBorderColor(e) {
 
 function defaultBorderColor(e) {
   e.target.style.borderColor = darkBlue;
-  e.target.previousElementSibling.children[1].style.display = "none";
+  e.target.previousElementSibling.style.display = "none";
 }
 
 function addAttribute() {
@@ -202,6 +202,7 @@ function addAttribute() {
   } else {
     exitPageOneBtn.removeAttribute("href");
   }
+  console.log(exitPageOneBtn.getAttribute("href"));
 }
 
 function reloadPage() {
@@ -253,8 +254,8 @@ function monthlyYearlyToggle() {
   }
 }
 
-monthlyParagraph.textContent = "(Monthly)";
-yearlyParagraph.textContent = "(Yearly)";
+monthlyParagraph.innerHTML = "<span>&nbsp;(Monthly)</span>";
+yearlyParagraph.innerHTML = "<span>&nbsp;(Yearly)</span>";
 
 function writeMonthly() {
   for (let i = 0; i < planDesc.children.length; i++) {
