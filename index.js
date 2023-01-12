@@ -143,7 +143,7 @@ function goToPageTwo() {
     if (input.value === "") {
       input.style.borderColor = "red";
       alertPara[index].style.display = "block";
-    } else if (exitPageOneBtn.getAttribute("href") !== null) {
+    } else {
       let current = document.querySelector(".active");
       current.className = current.className.replace(" active", "");
       navItem[1].firstElementChild.className += " active";
@@ -202,7 +202,6 @@ function addAttribute() {
   } else {
     exitPageOneBtn.removeAttribute("href");
   }
-  console.log(exitPageOneBtn.getAttribute("href"));
 }
 
 function reloadPage() {

@@ -22,9 +22,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
-}
-
-.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -616,5 +613,17 @@ input[type='checkbox'] {
         margin-left: 35%;
         width: 50%;
         margin-bottom: 15rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+
+    form {
+        margin-left: 14.5rem;
+        width: 60%;
+    }
+
+    .center {
+        margin-left: 35%;
     }
 }
