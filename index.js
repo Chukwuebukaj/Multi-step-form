@@ -83,6 +83,7 @@ changeSelection.addEventListener("click", goToPrevPage);
 backToPageThree.addEventListener("click", goToThirdPage);
 slider.addEventListener("click", monthlyYearlyToggle);
 refreshForm.addEventListener("click", reloadPage);
+document.onkeydown = disableTab;
 
 inputEl.forEach((input) => {
   input.addEventListener("input", addAttribute);
@@ -112,6 +113,12 @@ checkBox.forEach((box, index) => {
 
 //FUNCTION DECLARATIONS
 
+function disableTab(key) {
+  if (key.which === 9) {
+    return false;
+  }
+}
+
 function calculateSum() {
   let ratesArr = [];
   selectedRate.forEach((rate) => {
@@ -121,9 +128,14 @@ function calculateSum() {
       ratesArr.push(parseInt(rate.textContent.match(/(\d+)/)[0], 10));
     }
   });
-  sum =
-    parseInt(planRate.textContent.match(/(\d+)/)[0], 10) +
-    ratesArr.reduce((a, b) => a + b, 0);
+
+  if (ratesArr.length === 0) {
+    sum = parseInt(planRate.textContent.match(/(\d+)/)[0], 10);
+  } else {
+    sum =
+      parseInt(planRate.textContent.match(/(\d+)/)[0], 10) +
+      ratesArr.reduce((a, b) => a + b, 0);
+  }
 
   sum > 30
     ? (total.children[1].textContent = `$${sum}/yr`)
@@ -246,7 +258,7 @@ function monthlyYearlyToggle() {
     }
   });
   insertValue();
-  if (sum === undefined) {
+  if (planRate.textContent === "") {
     return;
   } else {
     calculateSum();
