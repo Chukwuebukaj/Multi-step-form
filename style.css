@@ -34,8 +34,8 @@ body {
 .form-container {
     display: flex;
     align-items: center;
-    width: 65vw;
-    height: 75vh;
+    width: 65%;
+    height: 75%;
     background-color: var(--color-neutral-wh);
     border-radius: .7rem;
     overflow: hidden;
@@ -639,7 +639,7 @@ input[type='checkbox'] {
 
     .alert {
         margin-left: 18rem;
-    }                                                                                 
+    }
 }
 
 @media screen and (min-width: 1280px) and (max-width: 1440px) {

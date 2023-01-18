@@ -140,11 +140,12 @@ function pressEnterPageThree(key) {
     goToPageFour();
   }
 }
+
 function pressEnterPageFour(key) {
   if (key.keyCode === 13) {
     pageFiveBtn.click();
-    document.addEventListener("keydown", pressEnterPageFive);
   }
+  document.addEventListener("keydown", pressEnterPageFive);
 }
 
 function pressEnterPageFive(key) {
