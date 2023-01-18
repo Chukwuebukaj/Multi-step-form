@@ -11,7 +11,7 @@ const navItem = document.querySelectorAll(".nav-item"),
   monthly = document.getElementById("monthly"),
   yearly = document.getElementById("yearly"),
   free = document.querySelectorAll(".free"),
-  exitPageOneBtn = document.querySelector(".page-two"),
+  exitPageOneBtn = document.getElementById("page-two"),
   exitPageTwoBtn = document.getElementById("page-three"),
   exitPageThreeBtn = document.getElementById("page-four"),
   backToPageOne = document.getElementById("back-one"),
@@ -71,12 +71,14 @@ gridItem.forEach((item) => {
     exitPageTwoBtn.setAttribute("href", "#step-three");
     pageFiveBtn.setAttribute("href", "#step-five");
     monthlyYearlyToggle();
+    document.addEventListener("keydown", pressEnterPageTwo);
   });
 });
 
 exitPageOneBtn.addEventListener("click", goToPageTwo);
 exitPageTwoBtn.addEventListener("click", goToPageThree);
 exitPageThreeBtn.addEventListener("click", goToPageFour);
+pageFiveBtn.addEventListener("click", clearBg);
 backToPageOne.addEventListener("click", goToPageOne);
 backToPageTwo.addEventListener("click", goToPrevPage);
 changeSelection.addEventListener("click", goToPrevPage);
@@ -108,6 +110,7 @@ checkBox.forEach((box, index) => {
           (selectedRate[index].textContent = ""))
         }`;
     calculateSum();
+    document.addEventListener("keydown", pressEnterPageThree);
   });
 });
 
@@ -116,6 +119,44 @@ checkBox.forEach((box, index) => {
 function disableTab(key) {
   if (key.which === 9) {
     return false;
+  }
+}
+
+function pressEnterPageOne(key) {
+  if (key.keyCode === 13) {
+    exitPageOneBtn.click();
+    goToPageTwo();
+  }
+}
+function pressEnterPageTwo(key) {
+  if (key.keyCode === 13) {
+    exitPageTwoBtn.click();
+    goToPageThree();
+  }
+}
+function pressEnterPageThree(key) {
+  if (key.keyCode === 13) {
+    exitPageThreeBtn.click();
+    goToPageFour();
+  }
+}
+function pressEnterPageFour(key) {
+  if (key.keyCode === 13) {
+    pageFiveBtn.click();
+    document.addEventListener("keydown", pressEnterPageFive);
+  }
+}
+
+function pressEnterPageFive(key) {
+  if (key.keyCode === 13) {
+    refreshForm.click();
+  }
+}
+
+function clearBg() {
+  if (pageFiveBtn.getAttribute("href") !== null) {
+    let current = document.querySelector(".active");
+    current.className = current.className.replace(" active", "");
   }
 }
 
@@ -175,6 +216,7 @@ function goToPageFour() {
   let current = document.querySelector(".active");
   current.className = current.className.replace(" active", "");
   navItem[3].firstElementChild.className += " active";
+  document.addEventListener("keydown", pressEnterPageFour);
 }
 
 function goToPageOne() {
@@ -211,6 +253,7 @@ function addAttribute() {
     inputEl[2].value !== ""
   ) {
     exitPageOneBtn.setAttribute("href", "#step-two");
+    document.addEventListener("keydown", pressEnterPageOne);
   } else {
     exitPageOneBtn.removeAttribute("href");
   }

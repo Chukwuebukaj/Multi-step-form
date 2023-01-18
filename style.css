@@ -175,7 +175,7 @@ label,
     color: var(--color-primary-mb);
 }
 
-.page-two,
+#page-two,
 #page-three,
 #page-four,
 #page-five,
@@ -208,7 +208,7 @@ button {
 
 .next-step,
 #clear-btn,
-.page-two,
+#page-two,
 #page-three {
     background: var(--color-primary-mb);
     color: var(--color-neutral-wh);
@@ -514,6 +514,11 @@ input[type='checkbox'] {
         margin-top: 45%;
     }
 
+    .alert {
+        margin-left: 52vw;
+    }
+
+
     .plan-grid {
         grid-template-columns: 100%;
         grid-template-rows: 5rem 5rem 5rem;
@@ -599,6 +604,11 @@ input[type='checkbox'] {
         margin-left: 10%;
     }
 
+    .alert {
+        margin-left: 21rem;
+    }
+
+
     .service {
         height: 10vw;
     }
@@ -625,5 +635,15 @@ input[type='checkbox'] {
 
     .center {
         margin-left: 35%;
+    }
+
+    .alert {
+        margin-left: 18rem;
+    }                                                                                 
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+    .alert {
+        margin-left: 21rem;
     }
 }
